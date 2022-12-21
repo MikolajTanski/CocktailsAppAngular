@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from './_services';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CocktailsAppAngular';
+  currentUser : any;
+
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) {
+    this.userService.currentUser.subscribe(x => this.currentUser = x)
+  }
+
+  logout() {
+    this.userService.logout();
+    this.router.navigate(['/login']);
+  }
 }
