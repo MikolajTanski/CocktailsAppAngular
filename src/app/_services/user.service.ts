@@ -55,12 +55,20 @@ export class UserService {
   }
 
   login(username: string, password: string) {
-    return this.httpClient.post<any>(`https://localhost:44335/api/authentication/login`, { username, password })
+    return this.httpClient.post<any>(`https://localhost:44308/api/authentication/login`, { username, password })
         .pipe(map(user => {
             localStorage.setItem('currentUser', JSON.stringify(user));
             this.currentUserSubject.next(user);
             this.token = user.token;
             localStorage.setItem('currentUserToken', user.token);
+            return user;
+        }));
+  }
+
+  register(username: string, email: string, password: string, confirmPassword: string) {
+    return this.httpClient.post<any>(`https://localhost:44308/api/authentication/register`, { username, email, password, confirmPassword })
+        .pipe(map(user => {
+            console.log(user);
             return user;
         }));
   }
