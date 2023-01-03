@@ -1,0 +1,20 @@
+<div class="container mt-3">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Name</th>
+        <th>Recipe</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cocktailRecipe of cocktailRecipes">
+        <td><span>{{cocktailRecipe?.id}}</span></td>
+        <td><span>{{cocktailRecipe?.author}}</span></td>
+        <td><span>{{cocktailRecipe?.name}}</span></td>
+        <td><span>{{cocktailRecipe?.recipe}}</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
