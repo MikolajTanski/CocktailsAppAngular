@@ -1,25 +1,32 @@
 <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-<h2>Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<h2>Add Your Own Recipe</h2>
+<form [formGroup]="addCocktailRecipeForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
         </div>
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+        <label for="ingredients">Ingredients</label>
+        <input type="text" formControlName="ingredients" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ingredients.errors }" />
+        <div *ngIf="submitted && f.ingredients.errors" class="invalid-feedback">
+            <div *ngIf="f.ingredients.errors.required">Ingredients are required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="recipe">Recipe</label>
+        <input type="text" formControlName="recipe" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.recipe.errors }" />
+        <div *ngIf="submitted && f.recipe.errors" class="invalid-feedback">
+            <div *ngIf="f.recipe.errors.required">Recipe is required</div>
         </div>
     </div>
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Login
+            Add New Cocktail
         </button>
-        <a routerLink="/register" class="btn btn-link">Register</a>
+        <a routerLink="/cocktailRecipes" class="btn btn-link"> Recipes </a>
     </div>
 </form>

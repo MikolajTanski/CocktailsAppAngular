@@ -6,7 +6,6 @@ import { CocktailRecipe } from '../_services/cocktail-recipe.service';
   selector: 'app-cocktail-recipes',
   templateUrl: './cocktail-recipes.component.html',
   styleUrls: ['./cocktail-recipes.component.css'],
-  providers: [CocktailRecipeService]
 })
 export class CocktailRecipesComponent implements OnInit {
 
@@ -21,6 +20,7 @@ export class CocktailRecipesComponent implements OnInit {
       response => {
         console.log(response);
         this.cocktailRecipes = response;
+        
       }, error => {
         console.log(error);
       });
