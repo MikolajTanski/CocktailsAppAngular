@@ -10,8 +10,8 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { CocktailRecipesComponent } from './cocktail-recipes/cocktail-recipes.component';
 import { CocktailRecipeDetailsComponent } from './cocktail-recipes/cocktail-recipe-details/cocktail-recipe-details.component';
-import { AddCocktailRecipeComponent } from './add-cocktail-recipe/add-cocktail-recipe.component';
-import { UpdateCocktailRecipeComponent } from './update-cocktail-recipe/update-cocktail-recipe.component';
+import { AddCocktailRecipeComponent } from './cocktail-recipes/add-cocktail-recipe/add-cocktail-recipe.component';
+import { UpdateCocktailRecipeComponent } from './cocktail-recipes/update-cocktail-recipe/update-cocktail-recipe.component';
 
 @NgModule({
   declarations: [
