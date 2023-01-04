@@ -26,33 +26,6 @@ export class UserService {
     public get currentUserToken() {
       return this.token;
     }
-  
-  getContact(contactId: number) {
-    return this.httpClient.get<any>('https://localhost:44335/api/contact/' + contactId);
-  }
-
-  getContacts() {
-    return this.httpClient.get<any>('https://localhost:44335/api/contact');
-  }
-
-  addContact(contact: any) {
-    const jsonContact  = {
-      "name": contact.name,
-      "email": contact.email,
-      "password": contact.password,
-      "phone": contact.phone,
-      "dateOfBirth": contact.dateOfBirth,
-      "category": {
-        "id": contact.category
-      }
-    };
-        
-    return this.httpClient.post<any>('https://localhost:44335/api/contact/add', jsonContact);
-  }
-
-  getCategories() {
-    return this.httpClient.get<any>('https://localhost:44335/api/category');
-  }
 
   login(username: string, password: string) {
     return this.httpClient.post<any>(`https://localhost:44308/api/authentication/login`, { username, password })
