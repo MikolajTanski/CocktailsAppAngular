@@ -1,0 +1,18 @@
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+<h2>Find possible cocktails by writing your ingredients</h2>
+<form [formGroup]="searchCocktailRecipeForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="ingredients">Ingredients (separated with <strong> , </strong>) </label>
+        <input type="text" formControlName="ingredients" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ingredients.errors }" />
+        <div *ngIf="submitted && f.ingredients.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors?.required">At least 1 ingredient is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Search
+        </button>
+        <a routerLink="/cocktailRecipes" class="btn btn-link"> Recipes </a>
+    </div>
+</form>

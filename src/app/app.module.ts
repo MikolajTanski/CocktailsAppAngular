@@ -12,6 +12,7 @@ import { CocktailRecipesComponent } from './cocktail-recipes/cocktail-recipes.co
 import { CocktailRecipeDetailsComponent } from './cocktail-recipes/cocktail-recipe-details/cocktail-recipe-details.component';
 import { AddCocktailRecipeComponent } from './cocktail-recipes/add-cocktail-recipe/add-cocktail-recipe.component';
 import { UpdateCocktailRecipeComponent } from './cocktail-recipes/update-cocktail-recipe/update-cocktail-recipe.component';
+import { SearchCocktailRecipesComponent } from './cocktail-recipes/search-cocktail-recipes/search-cocktail-recipes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UpdateCocktailRecipeComponent } from './cocktail-recipes/update-cocktai
     CocktailRecipesComponent,
     CocktailRecipeDetailsComponent,
     AddCocktailRecipeComponent,
-    UpdateCocktailRecipeComponent
+    UpdateCocktailRecipeComponent,
+    SearchCocktailRecipesComponent
   ],
   imports: [
     BrowserModule,

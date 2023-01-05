@@ -32,6 +32,10 @@ export class CocktailRecipeService {
       return this.httpClient.post<any>('https://localhost:44308/api/cocktailRecipes', cocktailRecipe);
     }
 
+    searchCocktailsByIngredients(ingredients : string) {
+      return this.httpClient.post<any>('https://localhost:44308/api/cocktailRecipes', { ingredients} );
+    }
+
 }
 
 
