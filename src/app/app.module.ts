@@ -13,6 +13,7 @@ import { CocktailRecipeDetailsComponent } from './cocktail-recipes/cocktail-reci
 import { AddCocktailRecipeComponent } from './cocktail-recipes/add-cocktail-recipe/add-cocktail-recipe.component';
 import { UpdateCocktailRecipeComponent } from './cocktail-recipes/update-cocktail-recipe/update-cocktail-recipe.component';
 import { SearchCocktailRecipesComponent } from './cocktail-recipes/search-cocktail-recipes/search-cocktail-recipes.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { SearchCocktailRecipesComponent } from './cocktail-recipes/search-cockta
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    authInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
