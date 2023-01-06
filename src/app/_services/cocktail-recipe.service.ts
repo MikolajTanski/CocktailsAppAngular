@@ -8,7 +8,7 @@ export interface CocktailRecipe {
   id?: number,
   name: string,
   recipe: string,
-  authorEmail?: string,
+  userEmail?: string,
   ingredients: string // later will be changed to ingredients objects array
 }
 
@@ -27,8 +27,8 @@ export class CocktailRecipeService {
 
     addCocktailRecipe(cocktailRecipe : CocktailRecipe) {
       let user = JSON.parse(localStorage.getItem('currentUser') || '{}');
-      cocktailRecipe.authorEmail = user.email;
-
+      cocktailRecipe.userEmail = user.email;
+      console.log(cocktailRecipe);
       return this.httpClient.post<any>('https://localhost:44308/api/cocktailRecipes', cocktailRecipe);
     }
 
